@@ -20,29 +20,29 @@ class FirstFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val recyclerView: RecyclerView = view.findViewById(R.id.recycler_view);
+        val recyclerView: RecyclerView = view.findViewById(R.id.recycler_view)
         val layoutManager = LinearLayoutManager(activity)
         recyclerView.layoutManager = layoutManager
 
         adapter = RecyclerViewAdapter()
-        recyclerView.adapter = adapter;
+        recyclerView.adapter = adapter
         adapter?.setData(insertData())
     }
 
     private fun insertData(): MutableList<Item?>{
         val list = mutableListOf<Item?>()
 
-        list.add(Item("banana","image"))
-        list.add(Item("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed" +
+        list.add(ImageItem("banana","image"))
+        list.add(TextItem("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed" +
                 " do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim" +
                 " ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip" +
                 " ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate" +
                 " velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat" +
                 " cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est" +
                 " laborum.","text"))
-        list.add(Item("apple","image"))
-        list.add(Item("Hello", "text"))
-        list.add(Item("World", "text"))
+        list.add(ImageItem("apple","image"))
+        list.add(TextItem("Hello", "text"))
+        list.add(TextItem("World", "text"))
         return list
     }
 
