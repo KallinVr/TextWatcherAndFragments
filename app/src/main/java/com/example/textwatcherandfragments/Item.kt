@@ -1,6 +1,6 @@
 package com.example.textwatcherandfragments
 
-data class Item(
-    val name: String?,
-    val viewType: String?
-)
+abstract class Item{
+    abstract var name : String?
+    abstract var viewType : String?
+}
